@@ -1,0 +1,30 @@
+{
+  "name": "login-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write */**.js",
+    "build:index": "browserify -e client -o public/bundle.js",
+    "build:login": "browserify -e client/login -o public/login-bundle.js",
+    "build": "npm run build:login && npm run build:index",
+    "start": "node main.js",
+    "example": "wzrd example/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bel": "4.5.1",
+    "ecstatic": "2.1.0",
+    "frame-rpc": "1.3.1",
+    "keypair": "1.0.1",
+    "routes": "2.1.0"
+  },
+  "devDependencies": {
+    "browserify": "14.0.0",
+    "prettier": "0.11.0",
+    "wzrd": "1.5.0"
+  }
+}
