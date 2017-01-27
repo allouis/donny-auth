@@ -14,6 +14,10 @@ function controller(db, jwt) {
         return res.end();
       }
       db.addOriginByUsername(params, function(err, user) {
+        if (err || !user) {
+          res.writeHead(500);
+          return res.end();
+        }
         res.writeHead(200, {
           "Set-Cookie": `username=${user.username}; httponly;`
         });
